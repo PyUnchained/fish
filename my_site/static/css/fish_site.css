@@ -1,0 +1,14 @@
+@font-face { 
+	font-family: Rakoon;
+	src: url('Rakoon.ttf'); }
+
+body {
+	background: ##49411d;
+	background-image: url("css_img/zenbg-1.png"), url("css_img/zenbg-2.png");
+	background-repeat: repeat-x, repeat;
+	
+}
+
+#navbar-brand {
+	font-family: Rakoon, serif !important;
+}

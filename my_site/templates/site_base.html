@@ -20,18 +20,35 @@
                 {% block sidebar-left %}
                 {% endblock %}
             </div>
-            <div class="col-sm-8">
-            {% block main_content_nav %}
-            {% endblock %}
+            <div class="col-sm-10">
+
+            <!-- Fixed navbar -->
+                <nav class="navbar navbar-default navbar-fixed-top">
+                  <div class="container">
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                      <a class="navbar-brand" href="#">The Fish Shop</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse float-right">
+                      <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#about">Orders</a></li>
+                      </ul>
+                    </div><!--/.nav-collapse -->
+                    <h4 class = 'served-num text-centered'><span class="fish-font">Customers Served:</span> 12,457!</h4>
+                  </div>
+                </nav>
 
             {% block main_content %}
             {% endblock %}
                 
             </div>
-            <div class="col-sm-2">
-                {% block sidebar-right %}
-                {% endblock %}
-            </div>        
+               
         </div>
     </div>
     
@@ -42,10 +59,46 @@
 {% block custom-js %}
 {% endblock %}
 <script type="text/javascript">
+(function($){
+    $.fn.extend({ 
+        rotaterator: function(options) {
+ 
+            var defaults = {
+                fadeSpeed: 500,
+                pauseSpeed: 100,
+                child:null
+            };
+             
+            var options = $.extend(defaults, options);
+         
+            return this.each(function() {
+                  var o =options;
+                  var obj = $(this);                
+                  var items = $(obj.children(), obj);
+                  items.each(function() {$(this).hide();})
+                  if(!o.child){var next = $(obj).children(':first');
+                  }else{var next = o.child;
+                  }
+                  $(next).fadeIn(o.fadeSpeed, function() {
+                        $(next).delay(o.pauseSpeed).fadeOut(o.fadeSpeed, function() {
+                            var next = $(this).next();
+                            if (next.length == 0){
+                                    next = $(obj).children(':first');
+                            }
+                            $(obj).rotaterator({child : next, fadeSpeed : o.fadeSpeed, pauseSpeed : o.pauseSpeed});
+                        })
+                    });
+            });
+        }
+    });
+})(jQuery);
+
 $(document).ready( function() {
     $( '#test-btn' ).click( function() {
         $('#test-btn-output').load( "{% url 'my_site.views.test' %}");
     });
+
+    $('#rotate').rotaterator({fadeSpeed:500, pauseSpeed:3000});
 });
 
 </script>

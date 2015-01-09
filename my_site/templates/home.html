@@ -2,33 +2,6 @@
 
 {% load static %}
 
-{% block main_content_nav %}
-
-<!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">The Fish Shop</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse float-right">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">Orders</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-        <h4 class = 'served-num'><span class="fish-font">Customers Served:</span> 12,457!</h4>
-      </div>
-    </nav>
-
-{% endblock %}
-
-
 
 {% block main_content %}
 
@@ -37,16 +10,48 @@
 
 <div class = 'info-wrapper'>
 <h2 class="fish-font text-center">Fresh, Delicious, Local!</h2>
+<div id="rotate" class="fish-font text-center"> 
+	<div>
+	<h2>We cook!</h2>
+	</div>
+	<div>
+	<h2>We fillet and clean!</h2>
+	</div>
+	<div>
+	<h2>We deliver in Harare!</h2>
+	</div>
+</div>
+
+
+
+
+
+
 <hr>
 	<div class="row">
 		<div class="col-sm-4 text-center">
-			<h3 class="fish-font">Product</h3>
-		</div>
-		<div class="col-sm-4 text-center">
+			<div class="info">
 			<h3 class="fish-font">Source</h3>
+			<p>Our <span class="fish-font-p">Lake Harvest</span> fish are locally grown and caught kariba breem. All natural, matured healthy fish, packed full of nutrients and a healthy part of any diet!</p>
+			<br>
+			<a class="fish-font-p" href="#">Learn More</a>
+			</div>
+			
 		</div>
 		<div class="col-sm-4 text-center">
-			<h3 class="fish-font">Location</h3>
+			<div class="info">
+			<h3 class="fish-font">Product</h3>
+			<p>Order our fresh descalled and filleted fish, or come down to our shop and have one of our <span class="fish-font-p">tasty, affordable meals.</span> We also do deliver locally in Harare!</p>
+			</div>
+		</div>
+		<div class="col-sm-4 text-center">
+			<div class="info">
+			<h3 class="fish-font">Where to Find Us</h3>
+			<p>Come down to our shop for the best <span class="fish-font-p">freshly prepared meals</span>, or place an order with us online now!</p>
+			<div class="contact-us">
+			<p><span class="fish-font-p">Call/Whatsapp:</span><br>0789333555</p>
+			<p><span class="fish-font-p">Email:</span> service@thefishshop.com</p>
+			</div>
 		</div>
 		
 	</div>

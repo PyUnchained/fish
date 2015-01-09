@@ -6,6 +6,7 @@ body {
 	background: ##49411d;
 	background-image: url("css_img/zenbg-1.png"), url("css_img/zenbg-2.png");
 	background-repeat: repeat-x, repeat;
+	font-family: Geneva, sans-serif !important;
 	
 }
 
@@ -13,14 +14,26 @@ body {
 	font-family: Rakoon, serif !important;
 	font-size: 4em !important;
 	color: #13669D !important;
-	text-shadow: 2px 2px #E7E7E7;
+	text-shadow: 2px 2px #a0a0a0;
+}
+
+.served-num {
+	padding-left: 70px;
 }
 
 @media all and (max-width : 480px){
   .navbar-brand {
     font-size: 2em !important;
   }
+  .served-num {
+	padding-left: 00px;
+	}
+	#rotate {
+		display: none;
+	}
 }
+
+
 
 .navbar-default .navbar-nav > .active > a {
 	border-radius: 30px;
@@ -42,10 +55,39 @@ body {
 	background-color: white;
 	border: 2px solid rgba(156,162,154,0.9);
 	border-radius: 20px;
+	padding: 0px 10px 0px 10px;
 }
 
-.fish-font {
+.info {
+	background-color: rgb(248,248,248);
+	border: 1px solid rgba(156,162,154,0.9);
+	border-radius: 10px;
+	padding: 0px 10px 0px 10px;
+}
+
+.contact-us {
+	background-color: rgba(156,162,154,0.9);
+	border-radius: 20px;
+	font-size: 0.9em;
+	padding: 5px;
+}
+
+.fish-font, .fish-font-p {
 	font-family: Rakoon, serif !important;
 	color: #13669D !important;
-	text-shadow: 2px 2px #E7E7E7;
+	text-shadow: 2px 2px #c1c1c1;
+}
+
+a.fish-font-p:hover, a.fish-font:hover {
+	color: #067971 !important;
+	text-shadow: none;
+	-webkit-transition: 200ms linear 0s;
+	-moz-transition: 200ms linear 0s;
+	-o-transition: 200ms linear 0s;
+	transition: 200ms linear 0s;
+	outline: 0 none;
+}
+
+.fish-font-p {
+	font-size: 1.2em;
 }

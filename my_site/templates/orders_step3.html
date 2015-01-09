@@ -1,0 +1,27 @@
+{% extends 'site_base.html' %}
+
+{% load static %}
+
+
+{% block main_content %}
+
+<br><br><br><br><br>
+
+
+<div class = 'info-wrapper'>
+<h2 class="fish-font text-center">Order Complete</h2>
+
+<hr>
+<div class="info  text-center">
+	<h2 class="fish-font">Thanks for your order!</h2>
+	<p>Feel free to get in touch with us to check on your order. Please provide your order id when you do.</p>
+	<br>
+	<h3 class="fish-font">Order ID</h3>
+	<h3>#{{order_num}}</h3>
+	<br>
+	<a class = 'btn btn-primary' href = "{% url 'order-steps' 1 %}">Place New Order</a>
+	<a class = 'btn btn-primary' href = "{% url 'home' %}">Back to Home</a>
+</div>
+</div>
+
+{% endblock %}

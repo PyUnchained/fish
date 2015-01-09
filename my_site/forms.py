@@ -5,8 +5,8 @@ from models import ProductItem
 class BasicOrderForm(forms.ModelForm):
 
 	FREQUENCIES = (
-		('O','Single Order'),
-		('D','Weekly Order'),
+		('S','Single Order'),
+		('W','Weekly Order'),
 	)
 
 	DAYS = (
@@ -20,7 +20,9 @@ class BasicOrderForm(forms.ModelForm):
 
 	frequency = forms.ChoiceField(choices = FREQUENCIES, widget=forms.RadioSelect)
 	days = forms.MultipleChoiceField(choices = DAYS, widget=forms.CheckboxSelectMultiple)
-	duration = forms.IntegerField(min_value = 1, max_value = 52)
+	duration = forms.IntegerField(min_value = 1, max_value = 52, initial = 1,
+		widget=forms.NumberInput(
+		attrs={'placeholder':'How long to repeat order.'}))
 	quantity = forms.IntegerField(min_value = 1, max_value = 100)
 	address_street = forms.CharField(max_length = 100, widget=forms.Textarea(
 		attrs={'class':'order-address', 'placeholder':'Enter your address here.'}))

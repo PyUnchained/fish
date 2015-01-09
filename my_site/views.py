@@ -12,7 +12,7 @@ from django.core.urlresolvers import reverse
 # Create your views here.
 
 from forms import BasicOrderForm
-from models import ProductItem
+from models import ProductItem, Order
 
 def home(request):
 
@@ -42,8 +42,22 @@ def order_steps(request, step, meal_type = None):
 			if form.is_valid():
 				allclean = form.cleaned_data
 
-				return render(request, 'orders_step2.html',
-					{'test':allclean,})
+				grand_total = int(allclean['price'])*int(allclean['quantity'])
+				product = ProductItem.objects.get(name = allclean['name'])
+
+				new_order = Order.objects.create(
+					days = str(allclean['days']),
+					date = allclean['date'],
+					frequency = allclean['frequency'],
+					duration = allclean['duration'],
+					address_street = allclean['address_street'],
+					quantity = allclean['quantity'],
+					num = allclean['num'],
+					total = grand_total,
+					product = product)
+
+				return render(request, 'orders_step3.html',
+					{'order_num':new_order.pk})
 
 
 	

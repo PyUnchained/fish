@@ -15,7 +15,7 @@ class ProductItem(models.Model):
 
 class Order(models.Model):
 	product = models.ForeignKey(ProductItem)
-	price = models.DecimalField(max_digits = 6, decimal_places = 2)
+	total = models.DecimalField(max_digits = 6, decimal_places = 2)
 	days = models.CharField(max_length = 10)
 	date = models.DateField()
 	frequency = models.CharField(max_length = 2)

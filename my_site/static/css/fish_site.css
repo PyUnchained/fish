@@ -93,8 +93,13 @@ a.fish-font-p:hover, a.fish-font:hover {
 	font-size: 1.2em;
 }
 
-.standard-form input {
+.standard-form-sm input  {
 	width: 120px;
+	text-align: center;
+}
+
+.standard-form-md input {
+	width: 190px;
 	text-align: center;
 }
 

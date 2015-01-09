@@ -18,8 +18,7 @@
 	{% csrf_token %}
 		<div class="col-sm-12 text-center">
 			<h2 class="fish-font">Order Details</h2>
-			{{test}}
-			<div class = 'row standard-form'>
+			<div class = 'row standard-form-sm'>
 				<div class = 'col-sm-3 form-input'>
 					<label>Product</label>
 					<br>
@@ -60,8 +59,8 @@
 			</div>
 			<br>
 			<div class = 'row'>
-				<div class = 'col-sm-6  form-input'>
-					<label>Duration in Weeks</label>
+				<div class = 'col-sm-6 standard-form-sm form-input'>
+					<label>No. of Weeks to Repeat Order For</label>
 					<br>
 					{{form.duration}}
 				</div>
@@ -73,7 +72,7 @@
 			</div>
 			<br>
 			<div class = 'row'>
-				<div class = 'col-sm-12  form-input'>
+				<div class = 'col-sm-12 standard-form-md form-input'>
 					<label>Contact Number</label>
 					<br>
 					{{form.num}}

@@ -12,41 +12,86 @@
 <h2 class="fish-font text-center">You Order, We Deliver!</h2>
 
 <hr>
+<div class="info">
 	<div class="row">
+	<form action =" {% url "order-steps" 3 %} " method = "POST">
+	{% csrf_token %}
 		<div class="col-sm-12 text-center">
 			<h2 class="fish-font">Order Details</h2>
-			<a class = 'btn btn-default' href = "{% url 'order-steps' 2 'meal' %}">Cooked Meal</a>
-			<a class = 'btn btn-default' href = "{% url 'order-steps' 2 'raw' %}">Raw Fish</a>
+			{{test}}
 			<div class = 'row standard-form'>
-				<div class = 'col-sm-6'>
-					<label>Name: </label>{{form.name}}
+				<div class = 'col-sm-3 form-input'>
+					<label>Product</label>
+					<br>
+					{{form.name}}
 				</div>
-				<div class = 'col-sm-6'>
-					<label>Name: </label>{{form.price}}
+				<div class = 'col-sm-3 form-input'>
+					<label>Price</label>
+					<br>
+					{{form.price}}
+				</div>
+				<div class = 'col-sm-3 form-input'>
+					<label>Quantity</label><span>(kgs/meals)</span>
+					<br>
+					{{form.quantity}}
+				</div>
+				<div class = 'col-sm-3 form-input'>
+					<label>Grand Total</label>
+					<br>
+					<input id="id_total" name="total" type="text" value="0" />
 				</div>
 			</div>
+			<br>
 			<div class = 'row'>
-				<div class = 'col-sm-12'>
-					<label>Frequency: </label>
+				<div class = 'col-sm-6 form-input'>
+					<label>Frequency</label>
 					<br>
 					{% for item in form.frequency %}
 					{{item}} &nbsp;&nbsp;
 					{% endfor %}
 				</div>
-			</div>
-			<div class = 'row'>
-				<div class = 'col-sm-12'>
-					<label>Days: </label>
+				<div class = 'col-sm-6  form-input'>
+					<label>Days</label>
 					<br>
 					{% for item in form.days %}
 					{{item}} &nbsp;&nbsp;
 					{% endfor %}
 				</div>
 			</div>
-			
+			<br>
+			<div class = 'row'>
+				<div class = 'col-sm-6  form-input'>
+					<label>Duration in Weeks</label>
+					<br>
+					{{form.duration}}
+				</div>
+				<div class = 'col-sm-6  form-input'>
+					<label>Begin Deliveries On</label>
+					<br>
+					{{form.date}}
+				</div>
+			</div>
+			<br>
+			<div class = 'row'>
+				<div class = 'col-sm-12  form-input'>
+					<label>Contact Number</label>
+					<br>
+					{{form.num}}
+					<br>
+					<br>
+					<label>Delivery Address</label>
+					<br>
+					{{form.address_street}}
+				</div>
+			</div>
+			<br>
+			<input class="btn btn-primary" type = "submit" value = "Place Order"/>
 		</div>
+
+	</form>
 		
 	</div>
+</div>
 </div>
 
 {% endblock %}

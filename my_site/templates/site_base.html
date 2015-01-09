@@ -7,6 +7,7 @@
     	<title>Welcome to the Fish Shop!</title>
         <link rel="stylesheet" href="{% static "css/fish_site.css" %}" type="text/css">
         <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" type="text/css">
+        <link rel="stylesheet" href="{% static "css/jquery-ui.min.css" %}" type="text/css">
         <link href="{% static "font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
         {% block custom-css %}
         {% endblock %}
@@ -56,6 +57,7 @@
 
 <script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
 <script src="{% static "js/bootstrap.min.js" %}"></script>
+<script src="{% static "js/jquery-ui.min.js" %}"></script>
 {% block custom-js %}
 {% endblock %}
 <script type="text/javascript">
@@ -99,6 +101,20 @@ $(document).ready( function() {
     });
 
     $('#rotate').rotaterator({fadeSpeed:500, pauseSpeed:3000});
+
+    $(function(){
+        $('#id_date').datepicker({
+            showButtonPanel: true
+        });
+    });
+
+    setInterval( function(){
+        var finalprice = $('#id_price').val() * $('#id_quantity').val();
+        $('#id_total').val('$' + finalprice.toFixed(2));
+    },
+    500
+    );
+
 });
 
 </script>

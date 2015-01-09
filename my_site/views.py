@@ -33,7 +33,19 @@ def order_steps(request, step, meal_type = None):
 				form = BasicOrderForm(initial = {'name':product.name,
 					'price':product.price})
 				return render(request, 'orders_step2.html',
-					{'form':form})
+					{'form':form,
+					'product':product})
+
+	if int(step) == 3:
+		if request.method == "POST":
+			form = BasicOrderForm(request.POST)
+			if form.is_valid():
+				allclean = form.cleaned_data
+
+				return render(request, 'orders_step2.html',
+					{'test':allclean,})
+
+
 	
 
 	return render(request, 'orders.html')

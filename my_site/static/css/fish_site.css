@@ -62,14 +62,9 @@ body {
 	background-color: rgb(248,248,248);
 	border: 1px solid rgba(156,162,154,0.9);
 	border-radius: 10px;
-	padding: 0px 10px 0px 10px;
+	padding: 0px 10px 20px 10px;
 }
 
-@media all and (min-width : 48px){
-  .info {
-    min-height: 280px;
-  }
-}
 
 .contact-us {
 	background-color: rgba(156,162,154,0.9);
@@ -100,4 +95,49 @@ a.fish-font-p:hover, a.fish-font:hover {
 
 .standard-form input {
 	width: 120px;
+	text-align: center;
+}
+
+input, textarea {
+	border-radius: 5px;
+	box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+    background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+    }
+
+.order-address {
+	width:400px;
+	height: 50px;
+}
+
+.ui-datepicker-header {
+	background: none !important;
+	background-color: #13669D !important;
+}
+
+.ui-state-highlight, .ui-state-hover {
+	background: none !important;
+	background-color: #13669D !important; 
+	color: white !important;
+}
+
+button.ui-datepicker-current {
+	display: none;
+}
+@media all and (min-width : 481px){
+  .info {
+    min-height: 280px;
+  }
+}
+
+@media all and (max-width : 480px){
+	.order-address {
+		width:250px;
+	}
+
+	.form-input {
+		padding-bottom: 20px;
+	}
 }

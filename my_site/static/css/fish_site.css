@@ -9,6 +9,43 @@ body {
 	
 }
 
-#navbar-brand {
+.navbar-brand {
 	font-family: Rakoon, serif !important;
+	font-size: 4em !important;
+	color: #13669D !important;
+	text-shadow: 2px 2px #E7E7E7;
+}
+
+@media all and (max-width : 480px){
+  .navbar-brand {
+    font-size: 2em !important;
+  }
+}
+
+.navbar-default .navbar-nav > .active > a {
+	border-radius: 30px;
+}
+
+.navbar-nav > li > a {
+	color: #13669D !important;
+}
+
+.navbar-nav > li > a:hover {
+	color: #F8F8F8 !important;
+	background-color: #13669D !important;
+	border-radius: 30px;
+}
+
+
+
+.info-wrapper {
+	background-color: white;
+	border: 2px solid rgba(156,162,154,0.9);
+	border-radius: 20px;
+}
+
+.fish-font {
+	font-family: Rakoon, serif !important;
+	color: #13669D !important;
+	text-shadow: 2px 2px #E7E7E7;
 }

@@ -14,14 +14,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">The Fish Shop</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <div id="navbar" class="navbar-collapse collapse float-right">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#about">Orders</a></li>
           </ul>
         </div><!--/.nav-collapse -->
+        <h4 class = 'served-num'><span class="fish-font">Customers Served:</span> 12,457!</h4>
       </div>
     </nav>
 
@@ -31,12 +32,24 @@
 
 {% block main_content %}
 
-<br><br><br>
+<br><br><br><br><br>
 
-<button type="button" id='test-btn'>Click Me!</button> 
-{{msg}}
-<div id = 'test-btn-output'>
-	
+
+<div class = 'info-wrapper'>
+<h2 class="fish-font text-center">Fresh, Delicious, Local!</h2>
+<hr>
+	<div class="row">
+		<div class="col-sm-4 text-center">
+			<h3 class="fish-font">Product</h3>
+		</div>
+		<div class="col-sm-4 text-center">
+			<h3 class="fish-font">Source</h3>
+		</div>
+		<div class="col-sm-4 text-center">
+			<h3 class="fish-font">Location</h3>
+		</div>
+		
+	</div>
 </div>
 
 {% endblock %}

@@ -36,8 +36,8 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse float-right">
                       <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#about">Orders</a></li>
+                        <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'order-steps' 1 %}">Orders</a></li>
                       </ul>
                     </div><!--/.nav-collapse -->
                     <h4 class = 'served-num text-centered'><span class="fish-font">Customers Served:</span> 12,457!</h4>

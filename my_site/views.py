@@ -11,9 +11,33 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.core.urlresolvers import reverse
 # Create your views here.
 
+from forms import BasicOrderForm
+from models import ProductItem
+
 def home(request):
 
 	return render(request, 'home.html')
+
+def order_steps(request, step, meal_type = None):
+
+	if int(step) == 1:
+		products = ProductItem.objects.all()
+		return render(request, 'orders_step1.html',
+			{'products':products})
+
+	if int(step) == 2:
+		products = ProductItem.objects.all()
+
+		for product in products:
+			if meal_type == product.name:
+				form = BasicOrderForm(initial = {'name':product.name,
+					'price':product.price})
+				return render(request, 'orders_step2.html',
+					{'form':form})
+	
+
+	return render(request, 'orders.html')
+
 
 def test(request):
 

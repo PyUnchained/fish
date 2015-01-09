@@ -7,6 +7,8 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^$', 'my_site.views.home', name = 'home'),
+    url(r'^order/(\d{1})/$', 'my_site.views.order_steps', name = 'order-steps'),
+    url(r'^order/(\d{1})/(\w+)/$', 'my_site.views.order_steps', name = 'order-steps'),
     url(r'^test/$', 'my_site.views.test', name = 'background_test'),
 )
 

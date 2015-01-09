@@ -1,0 +1,52 @@
+{% extends 'site_base.html' %}
+
+{% load static %}
+
+
+{% block main_content %}
+
+<br><br><br><br><br>
+
+
+<div class = 'info-wrapper'>
+<h2 class="fish-font text-center">You Order, We Deliver!</h2>
+
+<hr>
+	<div class="row">
+		<div class="col-sm-12 text-center">
+			<h2 class="fish-font">Order Details</h2>
+			<a class = 'btn btn-default' href = "{% url 'order-steps' 2 'meal' %}">Cooked Meal</a>
+			<a class = 'btn btn-default' href = "{% url 'order-steps' 2 'raw' %}">Raw Fish</a>
+			<div class = 'row standard-form'>
+				<div class = 'col-sm-6'>
+					<label>Name: </label>{{form.name}}
+				</div>
+				<div class = 'col-sm-6'>
+					<label>Name: </label>{{form.price}}
+				</div>
+			</div>
+			<div class = 'row'>
+				<div class = 'col-sm-12'>
+					<label>Frequency: </label>
+					<br>
+					{% for item in form.frequency %}
+					{{item}} &nbsp;&nbsp;
+					{% endfor %}
+				</div>
+			</div>
+			<div class = 'row'>
+				<div class = 'col-sm-12'>
+					<label>Days: </label>
+					<br>
+					{% for item in form.days %}
+					{{item}} &nbsp;&nbsp;
+					{% endfor %}
+				</div>
+			</div>
+			
+		</div>
+		
+	</div>
+</div>
+
+{% endblock %}

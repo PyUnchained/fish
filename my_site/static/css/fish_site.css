@@ -55,7 +55,7 @@ body {
 	background-color: white;
 	border: 2px solid rgba(156,162,154,0.9);
 	border-radius: 20px;
-	padding: 0px 10px 0px 10px;
+	padding: 0px 10px 30px 10px;
 }
 
 .info {
@@ -63,6 +63,12 @@ body {
 	border: 1px solid rgba(156,162,154,0.9);
 	border-radius: 10px;
 	padding: 0px 10px 0px 10px;
+}
+
+@media all and (min-width : 48px){
+  .info {
+    min-height: 280px;
+  }
 }
 
 .contact-us {
@@ -90,4 +96,8 @@ a.fish-font-p:hover, a.fish-font:hover {
 
 .fish-font-p {
 	font-size: 1.2em;
+}
+
+.standard-form input {
+	width: 120px;
 }

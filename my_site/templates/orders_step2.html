@@ -11,7 +11,6 @@
 <div class = 'info-wrapper'>
 <h2 class="fish-font text-center">You Order, We Deliver!</h2>
 
-<hr>
 <div class="info">
 	<div class="row">
 	<form action =" {% url "order-steps" 3 %} " method = "POST">
@@ -63,16 +62,12 @@
 					<label>No. of Weeks to Repeat Order For</label>
 					<br>
 					{{form.duration}}
-				</div>
-				<div class = 'col-sm-6  form-input'>
+					<br><br>
 					<label>Begin Deliveries On</label>
 					<br>
 					{{form.date}}
 				</div>
-			</div>
-			<br>
-			<div class = 'row'>
-				<div class = 'col-sm-12 standard-form-md form-input'>
+				<div class = 'col-sm-6 standard-form-md form-input'>
 					<label>Contact Number</label>
 					<br>
 					{{form.num}}
@@ -83,8 +78,9 @@
 					{{form.address_street}}
 				</div>
 			</div>
+			
 			<br>
-			<input class="btn btn-primary" type = "submit" value = "Place Order"/>
+			<input class="btn btn-fish" type = "submit" value = "Place Order"/>
 		</div>
 
 	</form>

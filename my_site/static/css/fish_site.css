@@ -2,10 +2,12 @@
 	font-family: Rakoon;
 	src: url('Rakoon.ttf'); }
 
+html {
+	height:100% !important; 
+}
+
 body {
-	background: ##49411d;
-	background-image: url("css_img/zenbg-1.png"), url("css_img/zenbg-2.png");
-	background-repeat: repeat-x, repeat;
+	background-color: #f9753b !important;
 	font-family: Geneva, sans-serif !important;
 	
 }
@@ -18,7 +20,7 @@ body {
 }
 
 .served-num {
-	padding-left: 70px;
+	padding-left: 0px;
 }
 
 @media all and (max-width : 480px){
@@ -33,29 +35,45 @@ body {
 	}
 }
 
-
-
-.navbar-default .navbar-nav > .active > a {
-	border-radius: 30px;
+.navbar-default {
+	background-color: #BA4511 !important;
+	border-color: #9b3305 !important;
 }
 
+
+
+.navbar-nav {
+	display: block;
+	padding-left: 5% !important;
+	padding-top: 16px !important;
+}
+
+
 .navbar-nav > li > a {
-	color: #13669D !important;
+	color: white !important;
+	background-color: #F35C19 !important;
+	border-radius: 30px;
 }
 
 .navbar-nav > li > a:hover {
 	color: #F8F8F8 !important;
-	background-color: #13669D !important;
-	border-radius: 30px;
+	background-color: black !important;
 }
 
+@media all and (max-width : 640px){
+	.navbar-default img {
+		max-width: 200px;
+		margin-left: 15px;
+	}
+}
 
 
 .info-wrapper {
 	background-color: white;
-	border: 2px solid rgba(156,162,154,0.9);
+	border: 1px solid black;
 	border-radius: 20px;
 	padding: 0px 10px 30px 10px;
+	margin-top: 35px;
 }
 
 .info {
@@ -75,8 +93,14 @@ body {
 
 .fish-font, .fish-font-p {
 	font-family: Rakoon, serif !important;
-	color: #13669D !important;
-	text-shadow: 2px 2px #c1c1c1;
+	color: #F35C19 !important;
+	text-shadow: 2px 2px #200700;
+}
+
+.fish-font-nav {
+	font-family: Rakoon, serif !important;
+	color: white !important;
+	text-shadow: 2px 2px #200700;
 }
 
 a.fish-font-p:hover, a.fish-font:hover {
@@ -93,14 +117,20 @@ a.fish-font-p:hover, a.fish-font:hover {
 	font-size: 1.2em;
 }
 
-.standard-form-sm input  {
+.standard-form-sm input, .standard-form-sm textarea  {
 	width: 120px;
 	text-align: center;
 }
 
-.standard-form-md input {
+.standard-form-md input, .standard-form-md textarea {
 	width: 190px;
 	text-align: center;
+}
+
+
+
+form {
+	font-size: 12px !important;
 }
 
 input, textarea {
@@ -126,6 +156,21 @@ input, textarea {
 	background: none !important;
 	background-color: #13669D !important; 
 	color: white !important;
+}
+
+.btn:hover {
+	background-color: black;
+	color: white !important;
+	border-color: black gray gray black !important;
+	box-shadow: 1px 1px #a0a0a0;
+}
+
+.btn-fish {
+
+	background-color: #F35C19;
+	border: 1px solid !important;
+	border-color: gray black black gray !important;
+	color: white;
 }
 
 button.ui-datepicker-current {

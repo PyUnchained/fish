@@ -1,0 +1,23 @@
+{% extends 'site_base.html' %}
+
+{% load static %}
+
+
+{% block main_content %}
+
+<br><br><br><br><br>
+
+
+<div class = 'info-wrapper'>
+<h2 class="fish-font text-center">You Order, We Deliver</h2>
+
+<hr>
+<div class="info  text-center">
+	<h2 class="fish-font">Select Payment Method</h2>
+	
+	<a class = 'btn btn-primary' href = "{% url 'order-steps' 5 %}">Paypal</a>
+	<a class = 'btn btn-primary' href = "{% url 'home' %}">Ecocash</a>
+</div>
+</div>
+
+{% endblock %}

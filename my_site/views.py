@@ -19,7 +19,7 @@ def home(request):
 
 	return render(request, 'home.html')
 
-def order_steps(request, step, meal_type = None):
+def order_steps(request, step, variable = None):
 	"""Handles online orders in a ste-by-step manner, as opposed to
 	using ajax, which works horribly on most mobile browsers."""
 
@@ -40,8 +40,10 @@ def order_steps(request, step, meal_type = None):
 
 		products = ProductItem.objects.all()
 
-		#Create the correct form for the product
+		#Create the correct form for the product and rename the variable
+		#string for clarity.
 		for product in products:
+			meal_type = variable
 
 			#Match the type of meal desired to the name of a
 			#product saved in the database
@@ -94,7 +96,7 @@ def order_steps(request, step, meal_type = None):
 				return render(request, 'orders_step2.html',
 					{'form':form})
 
-
+	#Fourth step: payment method.
 	
 
 	return render(request, 'orders.html')

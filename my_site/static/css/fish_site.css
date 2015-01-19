@@ -21,6 +21,7 @@ body {
 
 .served-num {
 	padding-left: 0px;
+	float: left;
 }
 
 @media all and (max-width : 480px){
@@ -43,7 +44,6 @@ body {
 
 
 .navbar-nav {
-	display: block;
 	padding-left: 5% !important;
 	padding-top: 16px !important;
 }
@@ -60,12 +60,7 @@ body {
 	background-color: black !important;
 }
 
-@media all and (max-width : 640px){
-	.navbar-default img {
-		max-width: 200px;
-		margin-left: 15px;
-	}
-}
+
 
 
 .info-wrapper {
@@ -83,12 +78,55 @@ body {
 	padding: 0px 10px 20px 10px;
 }
 
+.info img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media all and (max-width : 640px){
+	.navbar-default img {
+		max-width: 200px;
+		margin-left: 15px;
+	}
+}
+
+@media all and (min-width : 768px){
+	#contact-us-navbar {
+		display: none;
+	}
+}
+
+@media all and (min-width : 1024px){
+	#contact-us-navbar {
+		display: block;
+	}
+}
 
 .contact-us {
 	background-color: rgba(156,162,154,0.9);
 	border-radius: 20px;
 	font-size: 0.9em;
 	padding: 5px;
+}
+
+#contact-us-navbar .fish-font-p{
+	color: white !important;
+}
+
+#contact-us-navbar {
+	background-color: #F35C19;
+	color: white !important;
+	border-radius: 20px;
+	font-size: 0.9em;
+	padding: 5px 10px 5px 10px;
+	float: left;
+	margin-left: 5% !important;
+	margin-top: 15px !important;
+}
+
+h2.fish-font {
+	padding-bottom: 5px;
+	border-bottom: 2px #BA4511 solid;
 }
 
 .fish-font, .fish-font-p {
@@ -178,9 +216,21 @@ button.ui-datepicker-current {
 }
 @media all and (min-width : 481px){
   .info {
-    min-height: 280px;
+    min-height: 380px;
   }
 }
+
+
+.form-error-msg {
+	z-index: 10;
+	color: red !important;
+}
+
+.easy-map-googlemap {
+	width: 90%;
+	margin: 0 auto;
+}
+
 
 @media all and (max-width : 480px){
 	.order-address {

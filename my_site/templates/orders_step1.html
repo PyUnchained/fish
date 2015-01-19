@@ -11,12 +11,11 @@
 <div class = 'info-wrapper'>
 <h2 class="fish-font text-center">You Order, We Deliver!</h2>
 
-<hr>
 	<div class="row">
 		<div class="col-sm-12 text-center">
-			<h2 class="fish-font">What would you like?</h2>
+			<h3 class="fish-font">What would you like?</h3>
 			{% for product in products %}
-			<a class = 'btn btn-default' href = "{% url 'order-steps' 2 product.name %}">{{product.name}}</a>
+			<a class = 'btn btn-fish' href = "{% url 'order-steps' 2 product.name %}">{{product.name}}</a>
 			{% endfor %}
 		</div>
 		

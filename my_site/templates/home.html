@@ -2,6 +2,14 @@
 
 {% load static %}
 
+{% load easy_maps_tags %}
+
+<!-- Default map with 300x400 dimensions -->
+{% easy_map "Russia, Ekaterinburg, Mira 32" 300 400 %}
+
+<!-- Variable address, custom detail level and custom template -->
+{% easy_map address 200 200 5 using 'map.html' %}
+
 
 {% block main_content %}
 
@@ -10,7 +18,45 @@
 
 <div class = 'info-wrapper'>
 <h2 class="fish-font text-center">Fresh, Delicious, Local!</h2>
-<div id="rotate" class="fish-font text-center"> 
+
+
+	<div class="row">
+		<div class="col-sm-4 text-center">
+			<div class="info">
+			<h3 class="fish-font">Source</h3>
+			<img src="{% static "img/raw-fish1.png" %}" alt="Tilapi fish" class="img img-responsive thumbnail" />
+			<p>Our <span class="fish-font-p">Lake Harvest</span> fish are locally grown kariba Nile Talapia. Full of nutrients and a healthy part of any diet!</p>
+			</div>
+			
+		</div>
+		<div class="col-sm-4 text-center">
+			<div class="info">
+			<h3 class="fish-font">Product</h3>
+			<img src="{% static "img/lake-harvest-logo.png" %}" alt="Lake Harvest Logo" class="img img-responsive thumbnail" />
+			<p>Restaurant service and free delivery inside Harare of <span class="fish-font-p">tasty, affordable</span> cooked and fresh fish!</p>
+			</div>
+		</div>
+		<div class="col-sm-4 text-center">
+			<div class="info">
+			<h3 class="fish-font">Find Us</h3>
+			<div class="google-map">{% easy_map "Zimbabwe, Harare, Leicester 20" 160 160 %}</div>
+			<br>
+			<div class="contact-us">
+			<p><span class="fish-font-p">Call/Whatsapp:</span><br>0789333555</p>
+			<p><span class="fish-font-p">Email:</span> service@thefishshop.com</p>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+{% endblock %}
+
+{% block sidebar-left%}
+<br><br><br><br><br>
+
+
+<div id="rotate" class="fish-font text-center info-wrapper"> 
 	<div>
 	<h2>We cook!</h2>
 	</div>
@@ -19,37 +65,6 @@
 	</div>
 	<div>
 	<h2>We deliver in Harare!</h2>
-	</div>
-</div>
-
-
-<hr>
-	<div class="row">
-		<div class="col-sm-4 text-center">
-			<div class="info">
-			<h3 class="fish-font">Source</h3>
-			<p>Our <span class="fish-font-p">Lake Harvest</span> fish are locally grown and caught kariba breem. All natural, matured and healthy. Full of nutrients and a healthy part of any diet!</p>
-			<br>
-			<a class="fish-font-p" href="#">Learn More</a>
-			</div>
-			
-		</div>
-		<div class="col-sm-4 text-center">
-			<div class="info">
-			<h3 class="fish-font">Product</h3>
-			<p>Order our fresh descalled and filleted fish, or come down to our shop and have one of our <span class="fish-font-p">tasty, affordable meals.</span> We also do deliver locally in Harare!</p>
-			</div>
-		</div>
-		<div class="col-sm-4 text-center">
-			<div class="info">
-			<h3 class="fish-font">Where to Find Us</h3>
-			<p>Come down to our shop for the best <span class="fish-font-p">freshly prepared meals</span>, or place an order with us online now!</p>
-			<div class="contact-us">
-			<p><span class="fish-font-p">Call/Whatsapp:</span><br>0789333555</p>
-			<p><span class="fish-font-p">Email:</span> service@thefishshop.com</p>
-			</div>
-		</div>
-		
 	</div>
 </div>
 

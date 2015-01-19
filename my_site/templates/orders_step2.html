@@ -16,12 +16,13 @@
 	<form action =" {% url "order-steps" 3 %} " method = "POST">
 	{% csrf_token %}
 		<div class="col-sm-12 text-center">
-			<h2 class="fish-font">Order Details</h2>
+			<h3 class="fish-font">Order Details</h3>
 			<div class = 'row standard-form-sm'>
 				<div class = 'col-sm-3 form-input'>
 					<label>Product</label>
 					<br>
 					{{form.name}}
+					{{form.name.errors}}
 				</div>
 				<div class = 'col-sm-3 form-input'>
 					<label>Price</label>
@@ -32,6 +33,7 @@
 					<label>Quantity</label><span>(kgs/meals)</span>
 					<br>
 					{{form.quantity}}
+					<div class="form-error-msg">{{form.quantity.errors|striptags}}</div>
 				</div>
 				<div class = 'col-sm-3 form-input'>
 					<label>Grand Total</label>
@@ -47,6 +49,7 @@
 					{% for item in form.frequency %}
 					{{item}} &nbsp;&nbsp;
 					{% endfor %}
+					<div class="form-error-msg">{{form.frequency.errors|striptags}}</div>
 				</div>
 				<div class = 'col-sm-6  form-input'>
 					<label>Days</label>
@@ -54,6 +57,7 @@
 					{% for item in form.days %}
 					{{item}} &nbsp;&nbsp;
 					{% endfor %}
+					<div class="form-error-msg">{{form.days.errors|striptags}}</div>
 				</div>
 			</div>
 			<br>
@@ -62,20 +66,28 @@
 					<label>No. of Weeks to Repeat Order For</label>
 					<br>
 					{{form.duration}}
+					<div class="form-error-msg">{{form.duration.errors|striptags}}</div>
 					<br><br>
 					<label>Begin Deliveries On</label>
 					<br>
 					{{form.date}}
+					<div class="form-error-msg">{{form.date.errors|striptags}}</div>
 				</div>
 				<div class = 'col-sm-6 standard-form-md form-input'>
 					<label>Contact Number</label>
 					<br>
 					{{form.num}}
+					<div class="form-error-msg">{{form.num.errors|striptags}}</div>
+					{% if form.num.errors %}
+					<br>
+					{% else %}
 					<br>
 					<br>
+					{% endif %}
 					<label>Delivery Address</label>
 					<br>
 					{{form.address_street}}
+					<div class="form-error-msg">{{form.address_street.errors|striptags}}</div>
 				</div>
 			</div>
 			

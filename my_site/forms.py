@@ -1,3 +1,5 @@
+import datetime
+
 from django import forms
 
 from models import ProductItem
@@ -67,3 +69,13 @@ class BasicOrderForm(forms.ModelForm):
 			'name': forms.TextInput(attrs={'readonly':True}),
 			'price': forms.TextInput(attrs={'readonly':True})
 		}
+
+	def clean_date(self):
+		selected_date = self.cleaned_data['date']
+		tomorrow = datetime.date.today() + datetime.timedelta(
+			days = 1)
+
+		if selected_date < tomorrow:
+			raise forms.ValidationError("Order date must be from tomorrow onwards.")
+
+		return selected_date
